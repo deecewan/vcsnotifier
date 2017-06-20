@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6347C2F51EF80ED800DA7B4B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6347C2F41EF80ED800DA7B4B /* Alamofire.framework */; };
+		6347C2F71EF8243F00DA7B4B /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6347C2F61EF8243F00DA7B4B /* demo.json */; };
 		639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E214D1EF7F50100871FDD /* AppDelegate.swift */; };
 		639E21501EF7F50100871FDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E214F1EF7F50100871FDD /* ViewController.swift */; };
 		639E21521EF7F50100871FDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E21511EF7F50100871FDD /* Assets.xcassets */; };
 		639E21551EF7F50100871FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E21531EF7F50100871FDD /* Main.storyboard */; };
+		639E215D1EF7F9FB00871FDD /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */; };
+		639E215F1EF8009200871FDD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E215E1EF8009200871FDD /* API.swift */; };
+		AF7B2B02AD2D50188CE58AFE /* Pods_GithubNotifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.release.xcconfig"; sourceTree = "<group>"; };
+		4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.debug.xcconfig"; sourceTree = "<group>"; };
+		6347C2F41EF80ED800DA7B4B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = DerivedData/GithubNotifier/Build/Products/Debug/Alamofire/Alamofire.framework; sourceTree = "<group>"; };
+		6347C2F61EF8243F00DA7B4B /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = demo.json; path = ../demo.json; sourceTree = "<group>"; };
 		639E214A1EF7F50100871FDD /* GithubNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E214D1EF7F50100871FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639E214F1EF7F50100871FDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		639E21511EF7F50100871FDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639E21541EF7F50100871FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		639E21561EF7F50100871FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		639E215E1EF8009200871FDD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubNotifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +39,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6347C2F51EF80ED800DA7B4B /* Alamofire.framework in Frameworks */,
+				AF7B2B02AD2D50188CE58AFE /* Pods_GithubNotifier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C3B167E7413197B88159344 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6347C2F41EF80ED800DA7B4B /* Alamofire.framework */,
+				6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		544D874B64E9822CDCC5BB42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */,
+				19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		639E21411EF7F50100871FDD = {
 			isa = PBXGroup;
 			children = (
 				639E214C1EF7F50100871FDD /* GithubNotifier */,
 				639E214B1EF7F50100871FDD /* Products */,
+				544D874B64E9822CDCC5BB42 /* Pods */,
+				2C3B167E7413197B88159344 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,8 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				639E214D1EF7F50100871FDD /* AppDelegate.swift */,
+				639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */,
+				639E215E1EF8009200871FDD /* API.swift */,
 				639E214F1EF7F50100871FDD /* ViewController.swift */,
 				639E21511EF7F50100871FDD /* Assets.xcassets */,
+				6347C2F61EF8243F00DA7B4B /* demo.json */,
 				639E21531EF7F50100871FDD /* Main.storyboard */,
 				639E21561EF7F50100871FDD /* Info.plist */,
 			);
@@ -68,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639E21591EF7F50100871FDD /* Build configuration list for PBXNativeTarget "GithubNotifier" */;
 			buildPhases = (
+				719EDD8A4685FFE18BD6278F /* [CP] Check Pods Manifest.lock */,
 				639E21461EF7F50100871FDD /* Sources */,
 				639E21471EF7F50100871FDD /* Frameworks */,
 				639E21481EF7F50100871FDD /* Resources */,
+				FBF6895D9D85C96406D04685 /* [CP] Embed Pods Frameworks */,
+				30E1D2F830DFC6B642760734 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,18 +162,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				639E21521EF7F50100871FDD /* Assets.xcassets in Resources */,
+				6347C2F71EF8243F00DA7B4B /* demo.json in Resources */,
 				639E21551EF7F50100871FDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30E1D2F830DFC6B642760734 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		719EDD8A4685FFE18BD6278F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FBF6895D9D85C96406D04685 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		639E21461EF7F50100871FDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639E215D1EF7F9FB00871FDD /* StatusMenuController.swift in Sources */,
 				639E21501EF7F50100871FDD /* ViewController.swift in Sources */,
+				639E215F1EF8009200871FDD /* API.swift in Sources */,
 				639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,10 +337,15 @@
 		};
 		639E215A1EF7F50100871FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U949QPFRM7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DerivedData/GithubNotifier/Build/Products/Debug/Alamofire",
+				);
 				INFOPLIST_FILE = GithubNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.GithubNotifier;
@@ -260,10 +356,15 @@
 		};
 		639E215B1EF7F50100871FDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U949QPFRM7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DerivedData/GithubNotifier/Build/Products/Debug/Alamofire",
+				);
 				INFOPLIST_FILE = GithubNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.GithubNotifier;
@@ -291,6 +392,7 @@
 				639E215B1EF7F50100871FDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
