@@ -72,14 +72,12 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
       }
       let item = item!
       print("item added")
-      if let type = item["subject"]["type"].string {
-        let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
-        let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
-        let id = item["id"].string!
-        let title = item["subject"]["title"].string!
-        let repo = item["repository"]["full_name"].string!
-        self.store.append(id: id, title: title, link: url, repo: repo)
-      }
+      let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
+      let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
+      let id = item["id"].string!
+      let title = item["subject"]["title"].string!
+      let repo = item["repository"]["full_name"].string!
+      self.store.append(id: id, title: title, link: url, repo: repo)
     }
   }
 
