@@ -9,8 +9,8 @@
 import Cocoa
 
 class ItemView: NSView {
-    @IBOutlet weak var imageView: NSImageView!
-    @IBOutlet weak var itemTitleField: NSTextField!
-    @IBOutlet weak var repoInfoField: NSTextField!
+  @IBOutlet weak var imageView: NSImageView!
+  @IBOutlet weak var itemTitleField: NSTextField!
+  @IBOutlet weak var repoInfoField: NSTextField!
 
 }

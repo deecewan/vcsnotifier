@@ -16,7 +16,7 @@ extension StatusMenuController {
       return ""
     }
     let url = url!
-    let splits = url.characters.split(separator: "/").map{item in
+    let splits = url.characters.split(separator: "/").map { item in
       String(item)
     }
     let secondLast = splits[splits.endIndex - 2]
@@ -27,13 +27,13 @@ extension StatusMenuController {
     let type = splits[splits.endIndex - 3]
     let id = splits[splits.endIndex - 1]
 
-    switch(type) {
-      case "pulls":
-        return "#discussion_r\(id)"
-      case "issues":
-        return "#issuecomment-\(id)"
-      default:
-        return "#commitcomment-\(id)"
+    switch (type) {
+    case "pulls":
+      return "#discussion_r\(id)"
+    case "issues":
+      return "#issuecomment-\(id)"
+    default:
+      return "#commitcomment-\(id)"
     }
   }
 
@@ -41,9 +41,9 @@ extension StatusMenuController {
     // remove all the incorrect things
     // replace all wrong plurals
     let newUrl = url.replacingFirst(matching: "api.", with: "")
-        .replacingFirst(matching: "repos/", with: "")
-        .replacingFirst(matching: "pulls/", with: "pull/")
-        .replacingFirst(matching: "commits/", with: "commit")
+      .replacingFirst(matching: "repos/", with: "")
+      .replacingFirst(matching: "pulls/", with: "pull/")
+      .replacingFirst(matching: "commits/", with: "commit")
 
     return "\(newUrl)\(extra)"
   }
