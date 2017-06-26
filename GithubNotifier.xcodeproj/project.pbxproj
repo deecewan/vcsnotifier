@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6332627F1F0139F100DE386D /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262771F0139F100DE386D /* Actions.swift */; };
+		633262801F0139F100DE386D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262781F0139F100DE386D /* DataStore.swift */; };
+		633262811F0139F100DE386D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262791F0139F100DE386D /* Helpers.swift */; };
+		633262821F0139F100DE386D /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627A1F0139F100DE386D /* ItemView.swift */; };
+		633262831F0139F100DE386D /* MenuItemHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627B1F0139F100DE386D /* MenuItemHandler.swift */; };
+		633262841F0139F100DE386D /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627C1F0139F100DE386D /* NotificationHandler.swift */; };
+		633262851F0139F100DE386D /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627D1F0139F100DE386D /* PreferencesWindow.swift */; };
+		633262861F0139F100DE386D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6332627E1F0139F100DE386D /* PreferencesWindow.xib */; };
 		6347C2F51EF80ED800DA7B4B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6347C2F41EF80ED800DA7B4B /* Alamofire.framework */; };
 		6347C2F71EF8243F00DA7B4B /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6347C2F61EF8243F00DA7B4B /* demo.json */; };
 		639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E214D1EF7F50100871FDD /* AppDelegate.swift */; };
@@ -21,6 +29,14 @@
 /* Begin PBXFileReference section */
 		19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.release.xcconfig"; sourceTree = "<group>"; };
 		4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.debug.xcconfig"; sourceTree = "<group>"; };
+		633262771F0139F100DE386D /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		633262781F0139F100DE386D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		633262791F0139F100DE386D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		6332627A1F0139F100DE386D /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		6332627B1F0139F100DE386D /* MenuItemHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemHandler.swift; sourceTree = "<group>"; };
+		6332627C1F0139F100DE386D /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		6332627D1F0139F100DE386D /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		6332627E1F0139F100DE386D /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		6347C2F41EF80ED800DA7B4B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = DerivedData/GithubNotifier/Build/Products/Debug/Alamofire/Alamofire.framework; sourceTree = "<group>"; };
 		6347C2F61EF8243F00DA7B4B /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = demo.json; path = ../demo.json; sourceTree = "<group>"; };
 		639E214A1EF7F50100871FDD /* GithubNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,14 +102,22 @@
 		639E214C1EF7F50100871FDD /* GithubNotifier */ = {
 			isa = PBXGroup;
 			children = (
-				639E214D1EF7F50100871FDD /* AppDelegate.swift */,
-				639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */,
+				633262771F0139F100DE386D /* Actions.swift */,
 				639E215E1EF8009200871FDD /* API.swift */,
-				639E214F1EF7F50100871FDD /* ViewController.swift */,
+				639E214D1EF7F50100871FDD /* AppDelegate.swift */,
 				639E21511EF7F50100871FDD /* Assets.xcassets */,
+				633262781F0139F100DE386D /* DataStore.swift */,
 				6347C2F61EF8243F00DA7B4B /* demo.json */,
-				639E21531EF7F50100871FDD /* Main.storyboard */,
+				633262791F0139F100DE386D /* Helpers.swift */,
 				639E21561EF7F50100871FDD /* Info.plist */,
+				6332627A1F0139F100DE386D /* ItemView.swift */,
+				639E21531EF7F50100871FDD /* Main.storyboard */,
+				6332627B1F0139F100DE386D /* MenuItemHandler.swift */,
+				6332627C1F0139F100DE386D /* NotificationHandler.swift */,
+				6332627D1F0139F100DE386D /* PreferencesWindow.swift */,
+				6332627E1F0139F100DE386D /* PreferencesWindow.xib */,
+				639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */,
+				639E214F1EF7F50100871FDD /* ViewController.swift */,
 			);
 			path = GithubNotifier;
 			sourceTree = "<group>";
@@ -161,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633262861F0139F100DE386D /* PreferencesWindow.xib in Resources */,
 				639E21521EF7F50100871FDD /* Assets.xcassets in Resources */,
 				6347C2F71EF8243F00DA7B4B /* demo.json in Resources */,
 				639E21551EF7F50100871FDD /* Main.storyboard in Resources */,
@@ -222,10 +247,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6332627F1F0139F100DE386D /* Actions.swift in Sources */,
+				633262811F0139F100DE386D /* Helpers.swift in Sources */,
+				633262831F0139F100DE386D /* MenuItemHandler.swift in Sources */,
+				633262801F0139F100DE386D /* DataStore.swift in Sources */,
+				633262821F0139F100DE386D /* ItemView.swift in Sources */,
 				639E215D1EF7F9FB00871FDD /* StatusMenuController.swift in Sources */,
 				639E21501EF7F50100871FDD /* ViewController.swift in Sources */,
+				633262841F0139F100DE386D /* NotificationHandler.swift in Sources */,
 				639E215F1EF8009200871FDD /* API.swift in Sources */,
 				639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */,
+				633262851F0139F100DE386D /* PreferencesWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
