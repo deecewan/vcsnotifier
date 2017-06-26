@@ -68,3 +68,4 @@ fastlane/test_output
 big_response.json
 demo.js
 demo.json
+*.xcscheme

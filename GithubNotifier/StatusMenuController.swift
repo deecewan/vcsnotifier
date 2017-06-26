@@ -9,59 +9,69 @@
 import Cocoa
 import Regex
 
-struct Item {
-    let link: String;
-    let title: String;
-}
+class StatusMenuController: NSObject, PreferencesWindowDelegate {
 
-class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var itemView: ItemView!
+
+    var preferencesWindow: PreferencesWindow!
+    var startingCount: Int = 0;
+
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
-    let COMMENT_URL_REGEX = Regex("comments/(\\d+)")
+    let store: DataStore
+    let notificationHandler: NotificationHandler
     
-    @IBAction func quitAction(_ sender: NSMenuItem) {
-        NSApplication.shared().terminate(self)
-    }
-    
-    func getPrefix(_ url: String) -> String {
-        if url.range(of: "issues/") != nil {
-            return "issuecomment-"
-        }
-        if url.range(of: "pulls/") != nil {
-            return "discussion_r"
-        }
-        return "commitcomment-"
-    }
-    
-    func extractCommentIdUrl(_ incoming: String?) -> String? {
-        if incoming == nil {
-            return nil
-        }
-        let prefix = getPrefix(incoming!)
-        if let commentId = self.COMMENT_URL_REGEX.firstMatch(in: incoming!)?.captures[0] {
-            return "#\(prefix)\(commentId)"
-        }
-        return nil
-    }
-    
-    func normaliseUrl(_ url: String?, extra: String) -> String {
-        if url == nil {
-            return "";
-        }
-        var url = url!
-        url.replaceFirst(matching: "api.", with: "")
-        url.replaceFirst(matching: "repos/", with: "")
-        url.replaceFirst(matching: "pulls/", with: "pull/")
-        url.replaceFirst(matching: "commits/", with: "commit/")
-        return "\(url)\(extra)"
-    }
-    
+    let COMMENT_URL_REGEX: Regex = Regex("comments/(\\d+)")
+    let api: API = API.init()
+
     override func awakeFromNib() {
         print("Starting")
-        let api = API.init()
+
+        self.store.observe { _ in
+            self.render()
+        }
+
+        let icon = NSImage(named: "icon")
+        icon?.isTemplate = true // best for dark mode
+        statusItem.image = icon
+        statusItem.menu = statusMenu
+
+        preferencesWindow = PreferencesWindow()
+        preferencesWindow.delegate = self
+
+        // get the count for reliable item removal
+        self.startingCount = statusMenu.items.count
+
+        self.checkForAPIKey()
+
+        startTimer()
+        self.refresh()
+    }
+    
+    override init() {
+        self.store = DataStore.init()
+        self.notificationHandler = NotificationHandler.init(store: store)
+    }
+
+    func preferencesDidUpdate() {
+        print("preferences updated!")
+        self.refresh()
+    }
+    
+    func startTimer() {
+        _ = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.refresh), userInfo: nil, repeats: true)
+    }
+    
+    func refresh() {
+        print("refreshing")
         api.refresh() { item in
-            print("refresh")
+            if item == nil {
+                self.render()
+                return
+            }
+            let item = item!
+            print("item added")
             if let type = item["subject"]["type"].string {
                 var additionalPiece = ""
                 if type == "Commit" {
@@ -70,40 +80,54 @@ class StatusMenuController: NSObject {
                     additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string) ?? ""
                 }
                 let url = self.normaliseUrl(item["subject"]["url"].string, extra: additionalPiece)
-                // extract the comment id from the URL
-                self.addItem(name: item["subject"]["title"].string!, link: url)
+                let id = item["id"].string!
+                let title = item["subject"]["title"].string!
+                let repo = item["repository"]["full_name"].string!
+                self.store.append(id: id, title: title, link: url, repo: repo)
             }
         }
+    }
+    
+    func createNotification(item: Item) {
+        let notification = NSUserNotification()
+        notification.title = item.title
+        notification.informativeText = item.repoName
+        notification.identifier = item.id
         
-        let icon = NSImage(named: "icon")
-        icon?.isTemplate = true // best for dark mode
-        statusItem.image = icon
-        statusItem.menu = statusMenu
+        NSUserNotificationCenter.default.delegate = notificationHandler
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
-    func addItem(name: String, link: String) {
-        print(name);
-        print(link);
-//        // create a new menu item
-        let item: NSMenuItem = NSMenuItem.init()
-        item.title = name
-        item.identifier = link
-        item.action = #selector(self.printOnClick(sender:))
-        item.target = self//itemTarget as AnyObject
-        statusMenu.insertItem(item, at: 0)
-    }
-    
-    func printOnClick(sender: NSMenuItem) {
-        print(sender.identifier)
-        if let string = sender.identifier {
-            let url: URL = try! URL.init(string: string)!
-            NSWorkspace.shared().open(url)
-            // let's also remove the item from the list - the notification has been actioned
-            statusMenu.removeItem(sender)
+    func menuItemClick(sender: NSMenuItem) {
+        // is there a better way to do these nested lets?
+        if let id = sender.identifier {
+            if let item: Item = store.get(id: id) {
+                if let url: URL = URL.init(string: item.link) {
+                    NSWorkspace.shared().open(url)
+                    // let's also remove the item from the store - the notification has been actioned
+                    print("Removing \(id) from store")
+                    self.store.remove(id: id)
+                    self.notificationHandler.remove(id: id)
+                }
+            }
         }
+    }
+
+    func markIconUnread() {
+        self.markIcon(type: false)
+    }
+
+    func markIconRead() {
+        self.markIcon(type: true)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+    private func markIcon(type: Bool) {
+        let icon = NSImage(named: "icon")
+        icon?.isTemplate = type // best for dark mode
+        statusItem.image = icon
     }
 }

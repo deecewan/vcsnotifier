@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -658,17 +658,30 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Xgu-zp-3Ji" customClass="StatusMenuController" customModule="GithubNotifier" customModuleProvider="target">
                     <connections>
+                        <outlet property="itemView" destination="Pnp-CY-b8x" id="lYK-E0-6Kb"/>
                         <outlet property="statusMenu" destination="NdL-gA-XSK" id="NB8-So-j7E"/>
                     </connections>
                 </customObject>
                 <menu id="NdL-gA-XSK">
                     <items>
                         <menuItem isSeparatorItem="YES" id="AAL-ui-BbA"/>
+                        <menuItem title="Clear All" id="dUN-W2-GyD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="clearAllAction:" target="Xgu-zp-3Ji" id="YTm-hF-tX8"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="Preferences" id="56k-u0-PUh">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="preferencesClicked:" target="Xgu-zp-3Ji" id="1hb-ce-CZp"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Refresh" keyEquivalent="r" id="2zT-2x-F7g">
                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                            <connections>
+                                <action selector="refreshAction:" target="Xgu-zp-3Ji" id="tHW-bg-vgg"/>
+                            </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="I36-7E-ZQp"/>
                         <menuItem title="Quit" keyEquivalent="q" id="6qX-TF-yve">
@@ -678,6 +691,41 @@
                         </menuItem>
                     </items>
                 </menu>
+                <customView id="Pnp-CY-b8x" customClass="ItemView" customModule="GithubNotifier" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-sP-VRf">
+                            <rect key="frame" x="20" y="23" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="aXL-Da-nKE"/>
+                        </imageView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijs-1H-cZn">
+                            <rect key="frame" x="98" y="56" width="225" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Item Title" id="NIx-4v-oru">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-Hg-vmo">
+                            <rect key="frame" x="100" y="23" width="223" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Repo Info" id="DXV-qi-Ejq">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <connections>
+                        <outlet property="imageView" destination="lc8-sP-VRf" id="LXh-Nb-ppI"/>
+                        <outlet property="itemTitle" destination="ijs-1H-cZn" id="Vv8-ny-qt5"/>
+                        <outlet property="itemTitleField" destination="ijs-1H-cZn" id="kzR-i8-VWM"/>
+                        <outlet property="repoInfoField" destination="Dbx-Hg-vmo" id="AS6-PY-Ab5"/>
+                    </connections>
+                </customView>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
