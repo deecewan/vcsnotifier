@@ -69,3 +69,4 @@ big_response.json
 demo.js
 demo.json
 *.xcscheme
+.idea/
