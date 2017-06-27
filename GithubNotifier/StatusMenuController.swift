@@ -65,19 +65,26 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
 
   func refresh() {
     print("refreshing")
-    api.refresh() { item in
-      if item == nil {
+    store.cleanAll()
+    api.refresh() { items in
+      if items == nil {
         self.render()
         return
       }
-      let item = item!
-      print("item added")
-      let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
-      let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
-      let id = item["id"].string!
-      let title = item["subject"]["title"].string!
-      let repo = item["repository"]["full_name"].string!
-      self.store.append(id: id, title: title, link: url, repo: repo)
+      for (item) in items! {
+        print("item added")
+        let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
+        let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
+        let id = item["id"].string!
+        let title = item["subject"]["title"].string!
+        let repo = item["repository"]["full_name"].string!
+        self.store.append(id: id, title: title, link: url, repo: repo)
+      }
+      // remove all the clean items
+      for (item) in self.store.cleanItems() {
+        self.store.remove(id: item.id)
+        self.notificationHandler.remove(id: item.id)
+      }
     }
   }
 

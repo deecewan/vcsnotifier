@@ -105,6 +105,12 @@ class DataStore {
     }
   }
 
+  func cleanItems() -> [Item] {
+    return DataStore.filter() { item in
+      return item.clean
+    }
+  }
+
   func cleanAll() {
     for item in DataStore {
       item.markClean();

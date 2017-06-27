@@ -20,7 +20,7 @@ class API {
     return ["Authorization": "Bearer \(apiKey)", "Cache-Control": "no-cache"]
   }
 
-  func refresh(cb: @escaping (JSON?) -> Void) {
+  func refresh(cb: @escaping ([JSON]?) -> Void) {
     var urlRequest = try! URLRequest(url: "\(BASE_URL)/notifications", method: .get, headers: getHeaders())
     urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
     print("requesting")
@@ -33,9 +33,11 @@ class API {
             cb(nil)
           } else {
             // handle notifications
+            var items: [JSON] = [];
             for (_, item) in js {
-              cb(item)
+              items.append(item)
             }
+            cb(items)
           }
         } else {
           debugPrint(response)
