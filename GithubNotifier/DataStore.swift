@@ -48,9 +48,14 @@ class Item {
 }
 
 class DataStore {
+  var logger: Logger;
   var DataStore: Array = [Item]()
   var observer: (Void) -> Void = {
   };
+
+  init(logger: Logger) {
+    self.logger = logger;
+  }
 
   func observe(with cb: @escaping (Void) -> Void) {
     observer = cb;

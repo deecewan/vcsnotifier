@@ -7,12 +7,27 @@
 		<key>GithubNotifier.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>NotifierHelper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6333D33D1F01BF5000A0F1AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>639E21491EF7F50100871FDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63C59ABB1F0511D6001B0B3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

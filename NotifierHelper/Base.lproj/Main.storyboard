@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="GithubNotifier" id="1Xt-HY-uBw">
+                            <menuItem title="NotifierHelper" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="GithubNotifier" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="NotifierHelper" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About GithubNotifier" id="5kV-Vb-QxS">
+                                        <menuItem title="About NotifierHelper" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide GithubNotifier" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide NotifierHelper" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit GithubNotifier" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit NotifierHelper" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -640,7 +640,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="GithubNotifier Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="NotifierHelper Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -654,48 +654,8 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GithubNotifier" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Xgu-zp-3Ji" customClass="StatusMenuController" customModule="GithubNotifier" customModuleProvider="target">
-                    <connections>
-                        <outlet property="statusMenu" destination="NdL-gA-XSK" id="NB8-So-j7E"/>
-                    </connections>
-                </customObject>
-                <menu id="NdL-gA-XSK">
-                    <items>
-                        <menuItem isSeparatorItem="YES" id="AAL-ui-BbA"/>
-                        <menuItem title="Open All" id="X2p-kL-eBL">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="openAllClicked:" target="Xgu-zp-3Ji" id="514-x8-Izd"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Preferences" id="56k-u0-PUh">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="preferencesClicked:" target="Xgu-zp-3Ji" id="1hb-ce-CZp"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Refresh" keyEquivalent="r" id="2zT-2x-F7g">
-                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                            <connections>
-                                <action selector="refreshAction:" target="Xgu-zp-3Ji" id="tHW-bg-vgg"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Clear All" id="dUN-W2-GyD">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="clearAllAction:" target="Xgu-zp-3Ji" id="YTm-hF-tX8"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="I36-7E-ZQp"/>
-                        <menuItem title="Quit" keyEquivalent="q" id="6qX-TF-yve">
-                            <connections>
-                                <action selector="quitAction:" target="Xgu-zp-3Ji" id="afH-zU-mNX"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,7 +10,7 @@
             <connections>
                 <outlet property="apiKeyField" destination="et2-l6-eqo" id="pbh-QM-o7a"/>
                 <outlet property="showNotificationsFlag" destination="Bae-az-pmX" id="XaB-he-Rel"/>
-                <outlet property="startOnBootFlag" destination="OWj-XK-Wno" id="SU7-Wj-Ea5"/>
+                <outlet property="startOnBootFlag" destination="OWj-XK-Wno" id="Jjh-p6-nYw"/>
                 <outlet property="versionLabel" destination="hAI-Iz-OFm" id="jlN-3h-0Ky"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -71,6 +72,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="saveButtonClicked:" target="-2" id="v6J-jC-WfQ"/>
+                        </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-XK-Wno">
                         <rect key="frame" x="173" y="225" width="103" height="18"/>
@@ -79,6 +83,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleStartOnBoot:" target="-2" id="rsM-X1-jXD"/>
+                        </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bae-az-pmX">
                         <rect key="frame" x="173" y="195" width="134" height="18"/>
@@ -87,6 +94,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleShowNotification:" target="-2" id="Tvl-lT-VsT"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-Iz-OFm">
                         <rect key="frame" x="18" y="256" width="444" height="17"/>

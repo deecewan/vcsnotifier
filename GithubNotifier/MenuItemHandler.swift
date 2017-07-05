@@ -35,8 +35,28 @@ extension StatusMenuController {
         menuItem.identifier = item.id
         menuItem.action = #selector(self.menuItemClick(sender:))
         menuItem.target = self
+
         statusMenu.insertItem(menuItem, at: 0)
         item.markRendered(visible: true)
+    }
+
+    func menuItemClick(sender: NSMenuItem) {
+      // is there a better way to do these nested lets?
+      openMenuItem(id: sender.identifier)
+    }
+
+    func openMenuItem(id: String?) {
+      if id != nil {
+        let id = id!
+        if let item: Item = store.get(id: id) {
+          if let url: URL = URL.init(string: item.link) {
+            NSWorkspace.shared().open(url)
+            // let's also remove the item from the store - the notification has been actioned
+            self.store.remove(id: id)
+            self.notificationHandler.remove(id: id)
+          }
+        }
+      }
     }
 
     private func clearMenuItems() {

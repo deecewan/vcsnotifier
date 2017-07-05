@@ -14,6 +14,8 @@ class API {
   let BASE_URL = "https://api.github.com"
   // let BASE_URL = "http://localhost:3000"
 
+  let logger = Logger.init()
+
   func getHeaders() -> HTTPHeaders {
     let defaults = UserDefaults.standard
     let apiKey = defaults.string(forKey: "apiKey") ?? ""
@@ -40,7 +42,7 @@ class API {
             cb(items)
           }
         } else {
-          debugPrint(response)
+          self.logger.error("Failed to parse JSON: \(response)")
         }
       }
   }

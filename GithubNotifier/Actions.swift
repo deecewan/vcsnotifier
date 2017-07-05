@@ -10,11 +10,11 @@ import Foundation
 import Cocoa
 
 extension StatusMenuController {
-  @IBAction func clearAllAction(_ sender: NSMenuItem) {
-    // mark all notifications as read, remove them from the store and re-render
-    self.api.markAllAsRead {
-      self.store.clear()
-      self.notificationHandler.removeAll()
+
+  @IBAction func openAllClicked(_ sender: NSMenuItem) {
+    for item in self.store.iter() {
+      let id = item.id;
+      openMenuItem(id: id)
     }
   }
 
@@ -24,6 +24,14 @@ extension StatusMenuController {
 
   @IBAction func refreshAction(_ sender: NSMenuItem) {
     refresh()
+  }
+
+  @IBAction func clearAllAction(_ sender: NSMenuItem) {
+    // mark all notifications as read, remove them from the store and re-render
+    self.api.markAllAsRead {
+      self.store.clear()
+      self.notificationHandler.removeAll()
+    }
   }
 
   @IBAction func quitAction(_ sender: NSMenuItem) {

@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AF0E21B9B11D3741F496587 /* LoginLaunchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E57BE65904C7B99EC081 /* LoginLaunchHandler.swift */; };
+		6309EF111F03E5BA000D7C53 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309EF101F03E5BA000D7C53 /* Logger.swift */; };
+		6309EF161F03E9B7000D7C53 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309EF151F03E9B7000D7C53 /* ItemView.swift */; };
+		631601101F0532A700EDA960 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6316010F1F0532A700EDA960 /* ItemView.xib */; };
 		6332627F1F0139F100DE386D /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262771F0139F100DE386D /* Actions.swift */; };
 		633262801F0139F100DE386D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262781F0139F100DE386D /* DataStore.swift */; };
 		633262811F0139F100DE386D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633262791F0139F100DE386D /* Helpers.swift */; };
-		633262821F0139F100DE386D /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627A1F0139F100DE386D /* ItemView.swift */; };
 		633262831F0139F100DE386D /* MenuItemHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627B1F0139F100DE386D /* MenuItemHandler.swift */; };
 		633262841F0139F100DE386D /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627C1F0139F100DE386D /* NotificationHandler.swift */; };
 		633262851F0139F100DE386D /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332627D1F0139F100DE386D /* PreferencesWindow.swift */; };
 		633262861F0139F100DE386D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6332627E1F0139F100DE386D /* PreferencesWindow.xib */; };
+		6333D3561F01C0FE00A0F1AC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333D3551F01C0FE00A0F1AC /* ServiceManagement.framework */; };
+		6333D35A1F01C20300A0F1AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333D3591F01C20300A0F1AC /* Constants.swift */; };
 		6347C2F51EF80ED800DA7B4B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6347C2F41EF80ED800DA7B4B /* Alamofire.framework */; };
 		6347C2F71EF8243F00DA7B4B /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6347C2F61EF8243F00DA7B4B /* demo.json */; };
 		639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E214D1EF7F50100871FDD /* AppDelegate.swift */; };
@@ -23,20 +28,43 @@
 		639E21551EF7F50100871FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E21531EF7F50100871FDD /* Main.storyboard */; };
 		639E215D1EF7F9FB00871FDD /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */; };
 		639E215F1EF8009200871FDD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E215E1EF8009200871FDD /* API.swift */; };
+		63C59AC01F0511D6001B0B3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C59ABF1F0511D6001B0B3E /* AppDelegate.m */; };
+		63C59AC31F0511D6001B0B3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C59AC21F0511D6001B0B3E /* main.m */; };
+		63C59AC81F0511D6001B0B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C59AC71F0511D6001B0B3E /* Assets.xcassets */; };
+		63C59ACB1F0511D6001B0B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C59AC91F0511D6001B0B3E /* Main.storyboard */; };
+		63C59AD01F051226001B0B3E /* NotifierHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C59ABC1F0511D6001B0B3E /* NotifierHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF7B2B02AD2D50188CE58AFE /* Pods_GithubNotifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6333D3531F01C0C700A0F1AC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				63C59AD01F051226001B0B3E /* NotifierHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.release.xcconfig"; sourceTree = "<group>"; };
 		4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubNotifier/Pods-GithubNotifier.debug.xcconfig"; sourceTree = "<group>"; };
+		5AF0E57BE65904C7B99EC081 /* LoginLaunchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginLaunchHandler.swift; sourceTree = "<group>"; };
+		6309EF101F03E5BA000D7C53 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6309EF151F03E9B7000D7C53 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = ../ItemView.swift; sourceTree = "<group>"; };
+		6316010F1F0532A700EDA960 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView.xib; sourceTree = "<group>"; };
 		633262771F0139F100DE386D /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		633262781F0139F100DE386D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		633262791F0139F100DE386D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		6332627A1F0139F100DE386D /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		6332627B1F0139F100DE386D /* MenuItemHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemHandler.swift; sourceTree = "<group>"; };
 		6332627C1F0139F100DE386D /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		6332627D1F0139F100DE386D /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		6332627E1F0139F100DE386D /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		6333D3551F01C0FE00A0F1AC /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		6333D3591F01C20300A0F1AC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6347C2F41EF80ED800DA7B4B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = DerivedData/GithubNotifier/Build/Products/Debug/Alamofire/Alamofire.framework; sourceTree = "<group>"; };
 		6347C2F61EF8243F00DA7B4B /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = demo.json; path = ../demo.json; sourceTree = "<group>"; };
 		639E214A1EF7F50100871FDD /* GithubNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +75,15 @@
 		639E21561EF7F50100871FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639E215C1EF7F9FB00871FDD /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		639E215E1EF8009200871FDD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		63C59ABC1F0511D6001B0B3E /* NotifierHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifierHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C59ABE1F0511D6001B0B3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63C59ABF1F0511D6001B0B3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63C59AC21F0511D6001B0B3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63C59AC71F0511D6001B0B3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63C59ACA1F0511D6001B0B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63C59ACC1F0511D6001B0B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C59AD11F0516D3001B0B3E /* GithubNotifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubNotifier.entitlements; sourceTree = "<group>"; };
+		63C59AD21F051899001B0B3E /* NotifierHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotifierHelper.entitlements; sourceTree = "<group>"; };
 		6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubNotifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,8 +92,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6333D3561F01C0FE00A0F1AC /* ServiceManagement.framework in Frameworks */,
 				6347C2F51EF80ED800DA7B4B /* Alamofire.framework in Frameworks */,
 				AF7B2B02AD2D50188CE58AFE /* Pods_GithubNotifier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C59AB91F0511D6001B0B3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +111,7 @@
 		2C3B167E7413197B88159344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6333D3551F01C0FE00A0F1AC /* ServiceManagement.framework */,
 				6347C2F41EF80ED800DA7B4B /* Alamofire.framework */,
 				6BB36DFABF936590C4DAD9FC /* Pods_GithubNotifier.framework */,
 			);
@@ -84,7 +130,10 @@
 		639E21411EF7F50100871FDD = {
 			isa = PBXGroup;
 			children = (
+				6309EF101F03E5BA000D7C53 /* Logger.swift */,
+				6333D3591F01C20300A0F1AC /* Constants.swift */,
 				639E214C1EF7F50100871FDD /* GithubNotifier */,
+				63C59ABD1F0511D6001B0B3E /* NotifierHelper */,
 				639E214B1EF7F50100871FDD /* Products */,
 				544D874B64E9822CDCC5BB42 /* Pods */,
 				2C3B167E7413197B88159344 /* Frameworks */,
@@ -95,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				639E214A1EF7F50100871FDD /* GithubNotifier.app */,
+				63C59ABC1F0511D6001B0B3E /* NotifierHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +158,12 @@
 				639E21511EF7F50100871FDD /* Assets.xcassets */,
 				633262781F0139F100DE386D /* DataStore.swift */,
 				6347C2F61EF8243F00DA7B4B /* demo.json */,
+				63C59AD11F0516D3001B0B3E /* GithubNotifier.entitlements */,
 				633262791F0139F100DE386D /* Helpers.swift */,
 				639E21561EF7F50100871FDD /* Info.plist */,
-				6332627A1F0139F100DE386D /* ItemView.swift */,
+				6309EF151F03E9B7000D7C53 /* ItemView.swift */,
+				6316010F1F0532A700EDA960 /* ItemView.xib */,
+				5AF0E57BE65904C7B99EC081 /* LoginLaunchHandler.swift */,
 				639E21531EF7F50100871FDD /* Main.storyboard */,
 				6332627B1F0139F100DE386D /* MenuItemHandler.swift */,
 				6332627C1F0139F100DE386D /* NotificationHandler.swift */,
@@ -120,6 +173,28 @@
 				639E214F1EF7F50100871FDD /* ViewController.swift */,
 			);
 			path = GithubNotifier;
+			sourceTree = "<group>";
+		};
+		63C59ABD1F0511D6001B0B3E /* NotifierHelper */ = {
+			isa = PBXGroup;
+			children = (
+				63C59AD21F051899001B0B3E /* NotifierHelper.entitlements */,
+				63C59ABE1F0511D6001B0B3E /* AppDelegate.h */,
+				63C59ABF1F0511D6001B0B3E /* AppDelegate.m */,
+				63C59AC71F0511D6001B0B3E /* Assets.xcassets */,
+				63C59AC91F0511D6001B0B3E /* Main.storyboard */,
+				63C59ACC1F0511D6001B0B3E /* Info.plist */,
+				63C59AC11F0511D6001B0B3E /* Supporting Files */,
+			);
+			path = NotifierHelper;
+			sourceTree = "<group>";
+		};
+		63C59AC11F0511D6001B0B3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63C59AC21F0511D6001B0B3E /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +210,7 @@
 				639E21481EF7F50100871FDD /* Resources */,
 				FBF6895D9D85C96406D04685 /* [CP] Embed Pods Frameworks */,
 				30E1D2F830DFC6B642760734 /* [CP] Copy Pods Resources */,
+				6333D3531F01C0C700A0F1AC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -143,6 +219,23 @@
 			name = GithubNotifier;
 			productName = GithubNotifier;
 			productReference = 639E214A1EF7F50100871FDD /* GithubNotifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63C59ABB1F0511D6001B0B3E /* NotifierHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C59ACD1F0511D6001B0B3E /* Build configuration list for PBXNativeTarget "NotifierHelper" */;
+			buildPhases = (
+				63C59AB81F0511D6001B0B3E /* Sources */,
+				63C59AB91F0511D6001B0B3E /* Frameworks */,
+				63C59ABA1F0511D6001B0B3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotifierHelper;
+			productName = NotifierHelper;
+			productReference = 63C59ABC1F0511D6001B0B3E /* NotifierHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,6 +252,21 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = U949QPFRM7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					63C59ABB1F0511D6001B0B3E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = U949QPFRM7;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -176,6 +284,7 @@
 			projectRoot = "";
 			targets = (
 				639E21491EF7F50100871FDD /* GithubNotifier */,
+				63C59ABB1F0511D6001B0B3E /* NotifierHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -187,8 +296,18 @@
 			files = (
 				633262861F0139F100DE386D /* PreferencesWindow.xib in Resources */,
 				639E21521EF7F50100871FDD /* Assets.xcassets in Resources */,
+				631601101F0532A700EDA960 /* ItemView.xib in Resources */,
 				6347C2F71EF8243F00DA7B4B /* demo.json in Resources */,
 				639E21551EF7F50100871FDD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C59ABA1F0511D6001B0B3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C59AC81F0511D6001B0B3E /* Assets.xcassets in Resources */,
+				63C59ACB1F0511D6001B0B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +370,25 @@
 				633262811F0139F100DE386D /* Helpers.swift in Sources */,
 				633262831F0139F100DE386D /* MenuItemHandler.swift in Sources */,
 				633262801F0139F100DE386D /* DataStore.swift in Sources */,
-				633262821F0139F100DE386D /* ItemView.swift in Sources */,
 				639E215D1EF7F9FB00871FDD /* StatusMenuController.swift in Sources */,
 				639E21501EF7F50100871FDD /* ViewController.swift in Sources */,
+				6333D35A1F01C20300A0F1AC /* Constants.swift in Sources */,
 				633262841F0139F100DE386D /* NotificationHandler.swift in Sources */,
 				639E215F1EF8009200871FDD /* API.swift in Sources */,
 				639E214E1EF7F50100871FDD /* AppDelegate.swift in Sources */,
+				6309EF111F03E5BA000D7C53 /* Logger.swift in Sources */,
+				6309EF161F03E9B7000D7C53 /* ItemView.swift in Sources */,
 				633262851F0139F100DE386D /* PreferencesWindow.swift in Sources */,
+				5AF0E21B9B11D3741F496587 /* LoginLaunchHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C59AB81F0511D6001B0B3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C59AC31F0511D6001B0B3E /* main.m in Sources */,
+				63C59AC01F0511D6001B0B3E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +399,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				639E21541EF7F50100871FDD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63C59AC91F0511D6001B0B3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C59ACA1F0511D6001B0B3E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -360,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -371,7 +510,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E4F53193E5C8E80DB64CB5F /* Pods-GithubNotifier.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GithubNotifier/GithubNotifier.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U949QPFRM7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -380,8 +522,10 @@
 				);
 				INFOPLIST_FILE = GithubNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.GithubNotifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -390,7 +534,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19D99A69E7C09EA6D8E23575 /* Pods-GithubNotifier.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GithubNotifier/GithubNotifier.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U949QPFRM7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -399,9 +546,47 @@
 				);
 				INFOPLIST_FILE = GithubNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.GithubNotifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		63C59ACE1F0511D6001B0B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotifierHelper/NotifierHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U949QPFRM7;
+				INFOPLIST_FILE = NotifierHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.NotifierHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		63C59ACF1F0511D6001B0B3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotifierHelper/NotifierHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U949QPFRM7;
+				INFOPLIST_FILE = NotifierHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deecewan.NotifierHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -422,6 +607,15 @@
 			buildConfigurations = (
 				639E215A1EF7F50100871FDD /* Debug */,
 				639E215B1EF7F50100871FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63C59ACD1F0511D6001B0B3E /* Build configuration list for PBXNativeTarget "NotifierHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C59ACE1F0511D6001B0B3E /* Debug */,
+				63C59ACF1F0511D6001B0B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -70,3 +70,5 @@ demo.js
 demo.json
 *.xcscheme
 .idea/
+dsa_priv.pem
+dsa_pub.pem

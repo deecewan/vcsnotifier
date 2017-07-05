@@ -20,7 +20,6 @@ class NotificationHandler: NSObject, NSUserNotificationCenterDelegate {
         if let url: URL = URL.init(string: item.link) {
           NSWorkspace.shared().open(url)
           // let's also remove the item from the store - the notification has been actioned
-          print("Removing \(id) from store")
           self.store.remove(id: id)
           self.remove(notification: notification)
         }

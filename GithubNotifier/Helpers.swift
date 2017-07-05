@@ -40,10 +40,10 @@ extension StatusMenuController {
   func normaliseUrl(_ url: String, extra: String) -> String {
     // remove all the incorrect things
     // replace all wrong plurals
-    let newUrl = url.replacingFirst(matching: "api.", with: "")
-      .replacingFirst(matching: "repos/", with: "")
-      .replacingFirst(matching: "pulls/", with: "pull/")
-      .replacingFirst(matching: "commits/", with: "commit")
+    let newUrl = url.replacingOccurrences(of: "api.", with: "")
+      .replacingOccurrences(of: "repos/", with: "")
+      .replacingOccurrences(of: "pulls/", with: "pull/")
+      .replacingOccurrences(of: "commits/", with: "commit/")
 
     return "\(newUrl)\(extra)"
   }

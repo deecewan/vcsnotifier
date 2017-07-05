@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Regex
 
 class StatusMenuController: NSObject, PreferencesWindowDelegate {
 
@@ -18,15 +17,28 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
   var startingCount: Int = 0;
 
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+  let logger: Logger;
 
   let store: DataStore
   let notificationHandler: NotificationHandler
-
-  let COMMENT_URL_REGEX: Regex = Regex("comments/(\\d+)")
   let api: API = API.init()
+  let defaults = UserDefaults.standard
+
+  override init() {
+    self.logger = Logger.init();
+    self.store = DataStore.init(logger: logger)
+    self.notificationHandler = NotificationHandler.init(store: store)
+  }
+
 
   override func awakeFromNib() {
     print("Starting")
+
+    // set up default values
+    if defaults.object(forKey: "showNotifications") == nil {
+      print("No user default")
+      defaults.set(true, forKey: "showNotifications")
+    }
 
     self.store.observe { _ in
       self.render()
@@ -49,13 +61,8 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
     self.refresh()
   }
 
-  override init() {
-    self.store = DataStore.init()
-    self.notificationHandler = NotificationHandler.init(store: store)
-  }
-
   func preferencesDidUpdate() {
-    print("preferences updated!")
+    logger.log("preferences updated!")
     self.refresh()
   }
 
@@ -64,15 +71,14 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
   }
 
   func refresh() {
-    print("refreshing")
     store.cleanAll()
     api.refresh() { items in
       if items == nil {
+        self.removeCleanItems();
         self.render()
         return
       }
       for (item) in items! {
-        print("item added")
         let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
         let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
         let id = item["id"].string!
@@ -80,15 +86,22 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
         let repo = item["repository"]["full_name"].string!
         self.store.append(id: id, title: title, link: url, repo: repo)
       }
-      // remove all the clean items
-      for (item) in self.store.cleanItems() {
-        self.store.remove(id: item.id)
-        self.notificationHandler.remove(id: item.id)
-      }
+      self.removeCleanItems()
+    }
+  }
+
+  func removeCleanItems() {
+    // remove all the clean items
+    for (item) in self.store.cleanItems() {
+      self.store.remove(id: item.id)
+      self.notificationHandler.remove(id: item.id)
     }
   }
 
   func createNotification(item: Item) {
+    if !defaults.bool(forKey: "showNotifications") {
+      return
+    }
     let notification = NSUserNotification()
     notification.title = item.title
     notification.informativeText = item.repoName
@@ -96,21 +109,7 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
 
     NSUserNotificationCenter.default.delegate = notificationHandler
     NSUserNotificationCenter.default.deliver(notification)
-  }
 
-  func menuItemClick(sender: NSMenuItem) {
-    // is there a better way to do these nested lets?
-    if let id = sender.identifier {
-      if let item: Item = store.get(id: id) {
-        if let url: URL = URL.init(string: item.link) {
-          NSWorkspace.shared().open(url)
-          // let's also remove the item from the store - the notification has been actioned
-          print("Removing \(id) from store")
-          self.store.remove(id: id)
-          self.notificationHandler.remove(id: id)
-        }
-      }
-    }
   }
 
   func markIconUnread() {

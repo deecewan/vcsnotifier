@@ -1,18 +1,21 @@
 PODS:
-  - Alamofire (4.4.0)
-  - STRegex (1.0.0)
+  - Alamofire (4.5.0)
+  - PureLayout (3.0.2)
+  - Sparkle (1.17.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
-  - STRegex (~> 1.0)
+  - PureLayout
+  - Sparkle
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  STRegex: e186c92978c6701dfa216287c5a46720d06baa69
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Sparkle: ccfb47699feea7b40b51cf3176f69404e5b1da6c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 651422c4088ea139a57a35249ba13d7fba3b807d
+PODFILE CHECKSUM: b0c5c5498204968922505fc8277cb37e70669955
 
 COCOAPODS: 1.2.1
