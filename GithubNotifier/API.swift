@@ -27,24 +27,34 @@ class API {
     urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
     print("requesting")
     Alamofire.request(urlRequest)
+      .validate(statusCode: 200..<300)
       .responseJSON { response in
-        if let json = response.result.value {
-          let js = JSON(json)
-          if js.count == 0 {
-            print("No Notifications!")
-            cb(nil)
-          } else {
-            // handle notifications
-            var items: [JSON] = [];
-            for (_, item) in js {
-              items.append(item)
+        switch response.result {
+        case .success:
+          if let json = response.result.value {
+            let js = JSON(json)
+            if js.count == 0 {
+              print("No Notifications!")
+              cb(nil)
+            } else {
+              // handle notifications
+              var items: [JSON] = [];
+              for (_, item) in js {
+                items.append(item)
+              }
+              cb(items)
             }
-            cb(items)
+          } else {
+            self.logger.error("Failed to parse JSON: \(response)")
           }
-        } else {
-          self.logger.error("Failed to parse JSON: \(response)")
-        }
+        case .failure(let error):
+          print("THERE WAS A FAILURE!", error)
+          let notification = NSUserNotification.init()
+          notification.title = "Error accessing GitHub"
+          notification.subtitle = "Make sure your credentials are correct and GitHub is up."
+          NSUserNotificationCenter.default.deliver(notification)
       }
+    }
   }
 
   func markAllAsRead(afterAction: @escaping (Void) -> Void) {
