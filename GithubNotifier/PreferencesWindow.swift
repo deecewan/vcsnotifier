@@ -8,7 +8,6 @@
 
 import Cocoa
 import Foundation
-import ServiceManagement
 
 protocol PreferencesWindowDelegate {
   func preferencesDidUpdate()
@@ -36,13 +35,7 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
   }
 
   @IBAction func toggleStartOnBoot(_ sender: NSButton) {
-    let value = sender.stringValue == "1"
-    let res = SMLoginItemSetEnabled(Constants.LAUNCHER_BUNDLE_IDENTIFIER as CFString, value)
-    if res {
-      logger.log("Successfully \(value ? "" : "un")registered for login")
-    } else {
-      logger.warn("Could not \(value ? "" : "un")register for login")
-    }
+    // does nothing
   }
 
   @IBAction func saveButtonClicked(_ sender: NSButton) {
@@ -61,7 +54,7 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     self.window?.makeKeyAndOrderFront(nil)
     let apiKey = defaults.string(forKey: "apiKey") ?? ""
 
-    startOnBootFlag.stringValue = checkIfLaunchEnabled() ? "1" : "0"
+    startOnBootFlag.stringValue = "0"
 
     let showNotifications = defaults.bool(forKey: "showNotifications")
     showNotificationsFlag.stringValue = showNotifications ? "1" : "0"
@@ -89,11 +82,6 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     }
 
     return versionString;
-  }
-
-  private func checkIfLaunchEnabled() -> Bool {
-    let jobDicts = SMCopyAllJobDictionaries( kSMDomainUserLaunchd ).takeRetainedValue() as NSArray as! [[String:AnyObject]]
-    return jobDicts.filter { $0["Label"] as! String == Constants.LAUNCHER_BUNDLE_IDENTIFIER }.isEmpty == false
   }
 
 }

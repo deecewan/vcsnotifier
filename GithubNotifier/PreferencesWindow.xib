@@ -76,10 +76,10 @@
                             <action selector="saveButtonClicked:" target="-2" id="v6J-jC-WfQ"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-XK-Wno">
+                    <button toolTip="Not currently implemented" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-XK-Wno">
                         <rect key="frame" x="173" y="225" width="103" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Start on Boot" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="j90-db-eaJ">
+                        <buttonCell key="cell" type="check" title="Start on Boot" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="j90-db-eaJ">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

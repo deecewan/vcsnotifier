@@ -78,7 +78,9 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
         self.render()
         return
       }
+      print(items)
       for (item) in items! {
+        print(item)
         let additionalPiece = self.extractCommentIdUrl(item["subject"]["latest_comment_url"].string)
         let url = self.normaliseUrl(item["subject"]["url"].string!, extra: additionalPiece)
         let id = item["id"].string!
