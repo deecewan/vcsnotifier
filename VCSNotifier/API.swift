@@ -48,7 +48,7 @@ class API {
             self.logger.error("Failed to parse JSON: \(response)")
           }
         case .failure(let error):
-          print("THERE WAS A FAILURE!", error)
+          self.logger.error("Failed to retreive notifications: \(error)")
           let notification = NSUserNotification.init()
           notification.title = "Error accessing GitHub"
           notification.subtitle = "Make sure your credentials are correct and GitHub is up."

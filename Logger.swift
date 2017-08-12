@@ -9,7 +9,7 @@
 import Foundation
 
 class Logger {
-  let logPath = "log.txt"
+  let logPath = "github_notifier_log.txt"
   let path: URL?
   let formatter: DateFormatter
 
